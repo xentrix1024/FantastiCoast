@@ -31,7 +31,8 @@ Undefined areas (missing elevation data) must have a value of 0 and will be repr
 - 16bit grayscale png
 - 8bit grayscale png
 
-🚫 Note: **Never use JPG for mapping purposes**, as it introduces compression artifacts.
+> [!NOTE]
+> **Never use JPG for mapping purposes**, as it introduces compression artifacts.
 
 ## Usage
 ### Click Open to select your map file
@@ -39,19 +40,26 @@ The color scheme may be confusing but it allows for the display of up to 16milli
 
 Black pixels represent undefined elevation.
 
+![Click Open to select your map file](/Screenshots/open.png)
+
 ### Configure your settings
 Adjust the sea bottom depth, minimum slope and maximum slope to fine-tune the interpolation strength.
+
+![Click Open to select your map file](/Screenshots/config.png)
 
 ### Click Launch to fill in the missing elevation data
 The app will analyze neighboring areas and generate plausible elevation values.
 
-This method is known as interpolation. It creates fictional elevation data to provide a complete terrain.
+This method is known as interpolation. It creates **fictional** elevation data to provide a complete terrain.
 
 The smoothness of the terrain will depend on your selected settings.
+
+![Click Open to select your map file](/Screenshots/launch.png)
 
 ### Review and export
 Save the refined heightmap in your desired format.
 
-FantastiCoast is a practical tool for refining elevation data, particularly in cases where DEM datasets contain missing or undefined regions. Whether for gaming, GIS applications, or scientific modeling, it provides a simple yet effective way to generate a complete heightmap.
+### FantastiCoast is a practical tool for refining elevation data, particularly in cases where DEM datasets contain missing or undefined regions. Whether for gaming, GIS applications, or scientific modeling, it provides a simple yet effective way to generate a complete heightmap.
 
-⚠ Warning: Interpolation is a heuristic process and does not necessarily reflect real-world topography. It generates estimated elevation data based on surrounding values. Results may vary depending on input quality, the extent of missing data, and user configuration.
+> [!WARNING]
+> Interpolation is a heuristic process and does not necessarily reflect real-world topography. It generates estimated elevation data based on surrounding values. Results may vary depending on input quality, the extent of missing data, and user configuration.
