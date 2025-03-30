@@ -1,6 +1,8 @@
 # FantastiCoast
 # Elevation Data Interpolation Tool
-Fantasticoast is a utility designed to fill missing elevation data in maps generated from Digital Elevation Model (DEM) sources. It interpolates coastal and water body elevations, ensuring smooth transitions between land and water for a more accurate and usable heightmap.
+FantastiCoast is a utility designed to fill in missing elevation data in maps generated from Digital Elevation Model (DEM) sources. It interpolates neighboring elevations, ensuring smooth transitions between existing and missing data for a more natural-looking and usable heightmap.
+
+It is particularly useful for coastal and water body elevations, which are often absent or incomplete in raw DEM datasets.
 
 While originally developed for terrain generation in SimCity 4, the tool can be applied to other mapping and elevation modeling tasks where DEM-derived data requires refinement.
 
@@ -15,34 +17,41 @@ While originally developed for terrain generation in SimCity 4, the tool can be 
 - Improving DEM-derived elevation data for hydrological studies.
 - Enhancing elevation maps for 3D rendering or GIS applications.
 
-### Acceptable input files
-- ascii DEM files
+### Supported input file formats
+- ASCII DEM files
 - 24/32bit bmp
 - 24/32bit png
-- 16 bit grayscale png
+- 16bit grayscale png
 - 8bit grayscale png (low detail)
-Undefined areas (missing elevation data) will have a value of 0 and will be presented as black pixels.
+Undefined areas (missing elevation data) must have a value of 0 and will be represented as black pixels.
 
-### Output file types
+### Output file formats
 - 24bit color bmp
 - 24bit color png
 - 16bit grayscale png
 - 8bit grayscale png
 
-**Never use jpg for mapping purposes**
+🚫 Note: **Never use JPG for mapping purposes**, as it introduces compression artifacts.
 
 ## Usage
-### Click Open to select your map
-The color scheme might be confusing but it is one way to display up to 16million elevation steps.
+### Click Open to select your map file
+The color scheme may be confusing but it allows for the display of up to 16million elevation steps.
 
 Black pixels represent undefined elevation.
 
 ### Configure your settings
-You can select the sea bottom depth and minimum & maximum slope
+Adjust the sea bottom depth, minimum slope and maximum slope to fine-tune the interpolation strength.
 
-### Click Launch to fill in the gaps
-The app will try to fill in the missing data by examining the neighboring areas and figuring out a possible elevation.
+### Click Launch to fill in the missing elevation data
+The app will analyze neighboring areas and generate plausible elevation values.
 
-This method is called interpolation and it creates **fictional** data.
+This method is known as interpolation. It creates fictional elevation data to provide a complete terrain.
 
-The smoothness of the ground will depend on your configuration settings.
+The smoothness of the terrain will depend on your selected settings.
+
+### Review and export
+Save the refined heightmap in your desired format.
+
+FantastiCoast is a practical tool for refining elevation data, particularly in cases where DEM datasets contain missing or undefined regions. Whether for gaming, GIS applications, or scientific modeling, it provides a simple yet effective way to generate a complete heightmap.
+
+⚠ Warning: Interpolation is a heuristic process and does not necessarily reflect real-world topography. It generates estimated elevation data based on surrounding values. Results may vary depending on input quality, the extent of missing data, and user configuration.
